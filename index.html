@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./sass/style.css">
+    <title>MyTodo</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="notification" id="notification">item added</div>
+        <h1 class="title">todo buddy</h1>
+        <form id="form">
+            <input type="text" class="inputTxt" id="inputTxt" placeholder="e.g. hit the gym" spellcheck="false">
+            <button type="button" id="mic" class="mic"><img src="./icons/mic.svg" alt=""></button>
+            <button type="submit" id="addBtn" class="addBtn">add</button>
+        </form>
+        <div class="todos" id="todos">
+            <!-- <article>
+                <p>apple</p>
+                <button><img src="./icons/edit.svg" alt="editBtn"></button>
+                <button><img src="./icons/trash.svg" alt="delBtn"></button>
+            </article> -->
+          
+           
+        </div>
+        <div class="clearTodo" id="clearTodo">
+            <button class="clrBtn" id="clrBtn">clear Item</button>
+        </div>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

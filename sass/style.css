@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Roboto:wght@300;500&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(229, 235, 238, 0.842);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4rem 6rem 10rem auto 5rem;
+      grid-template-rows: 4rem 6rem 10rem auto 5rem;
+  gap: 1rem;
+  background-color: white;
+  width: 85vw;
+  height: 80vh;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+}
+
+.container .notification {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 4rem;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  background-color: rgba(229, 235, 238, 0.842);
+  visibility: hidden;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .notification.warning {
+  color: #f81818;
+  visibility: visible;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .notification.success {
+  color: #07ad07;
+  visibility: visible;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .title {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  letter-spacing: 0.3rem;
+  margin: 0 auto;
+  color: #302f2f;
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+  position: relative;
+}
+
+.container .title::after {
+  position: absolute;
+  background: #000;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 18rem;
+  height: .3rem;
+  border-radius: .5rem;
+}
+
+.container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.container form .inputTxt {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  width: 70%;
+  height: 4rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgba(229, 235, 238, 0.842);
+  outline: none;
+  font-size: 1.5rem;
+  padding: 0 1.5rem;
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3), -1px -1px 5px 0 rgba(206, 204, 204, 0.5);
+          box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3), -1px -1px 5px 0 rgba(206, 204, 204, 0.5);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container form .inputTxt:focus {
+  -webkit-box-shadow: 0 0 1rem 0.3rem rgba(102, 51, 153, 0.699);
+          box-shadow: 0 0 1rem 0.3rem rgba(102, 51, 153, 0.699);
+}
+
+.container form .mic {
+  -webkit-transform: translateX(-130%);
+          transform: translateX(-130%);
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container form .mic:hover {
+  opacity: 0.6;
+}
+
+.container form .mic:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.container form .mic img {
+  pointer-events: none;
+  background: none;
+}
+
+.container form .addBtn {
+  height: 4rem;
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rebeccapurple;
+  font-weight: bold;
+  color: white;
+  outline: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3), -1px -1px 5px 0 rgba(206, 204, 204, 0.5);
+          box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3), -1px -1px 5px 0 rgba(206, 204, 204, 0.5);
+}
+
+.container form .addBtn::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  -webkit-transition: ease 0.1s;
+  transition: ease 0.1s;
+  background-color: #894cc5;
+  z-index: -1;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container form .addBtn:hover {
+  opacity: 0.85;
+}
+
+.container form .addBtn:active {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.container form .addBtn:active:before {
+  visibility: visible;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.container .todos {
+  padding: 1rem;
+  overflow: scroll;
+  display: none;
+  visibility: hidden;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .todos::-webkit-scrollbar {
+  display: none;
+}
+
+.container .todos article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3rem;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  background-color: rgba(229, 235, 238, 0.842);
+}
+
+.container .todos article:nth-child(odd) {
+  background-color: #dededf;
+}
+
+.container .todos article:hover {
+  background-color: rgba(189, 188, 188, 0.747);
+}
+
+.container .todos article p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.8rem;
+  position: relative;
+  margin-left: 2.3rem;
+  cursor: pointer;
+}
+
+.container .todos article p.checked {
+  text-decoration: line-through;
+}
+
+.container .todos article p.checked::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -2.4rem;
+  width: 1.8rem;
+  height: 1rem;
+  border-left: 0.2rem solid green;
+  border-bottom: 0.2rem solid green;
+  border-radius: 0 0 0 0.3rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.container .todos article button {
+  border: none;
+  margin-left: 0.5rem;
+  height: 100%;
+  padding: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container .todos article button img {
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+}
+
+.container .todos article button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgba(94, 94, 94, 0.11);
+}
+
+.container .todos article button:active {
+  background-color: rgba(94, 94, 94, 0.952);
+}
+
+.container .todos.show {
+  display: initial;
+  visibility: visible;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .clearTodo {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  display: none;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+
+.container .clearTodo .clrBtn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: white;
+  background-color: rebeccapurple;
+  border: none;
+  outline: none;
+  padding: .8rem 5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.container .clearTodo .clrBtn:hover {
+  opacity: 0.9;
+}
+
+.container .clearTodo .clrBtn:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.container .clearTodo.show {
+  display: -ms-grid;
+  display: grid;
+  visibility: visible;
+  -webkit-transition: displayTrans 0.3s ease;
+  transition: displayTrans 0.3s ease;
+}
+/*# sourceMappingURL=style.css.map */
